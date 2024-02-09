@@ -1,0 +1,743 @@
+<html>
+    <head>
+        <meta charset="utf-8"> <!-- задание кодировки сайта -->
+
+        <title>Памятка бармену</title> <!-- Название сайта наверху, на вкладке -->
+        <link rel="icon" href="https://icon-icons.com/downloadimage.php?id=61965&root=709/ICO/512/&file=Drinks-33_icon-icons.com_61965.ico" type="image/x-icon">
+        <!-- выше указывается ссылка на иконку сайта, файл должен быть в формате .ico -->
+        <style>
+
+.recipe-container {
+    zoom: 1.25;
+}
+
+    p {
+        color: #b7b7b7; /* Цвет текста */
+        font-family: 'Arial', sans-serif; /* Шрифт */
+        font-size: 20px; /* Размер шрифта */
+        text-shadow: 1px 1px 2px #656565; /* Тень текста */
+    }
+
+/* Фон и темная тема */
+/* Боди задает цвет фона, боди дарк - задает цвет букв и цвет фона */
+    body {     zoom: 1.25;
+    background: linear-gradient(#f0f0f0, #bbbbbd, #7d7f7d);
+}
+
+body.dark-theme {
+  color: #eee;
+  background: linear-gradient(#3e3e3e, #212121);
+}
+/* Деление сайта на две половины */
+/* В общем, все инструменты сидят в главном отсеке, он задан как parent */
+/* А уже главный patent поделен на левый и правый, дальше уже в самом коде будет комент указывающий на них */
+        #parent {
+                display: flex;
+}
+        #parent #left {
+                flex-grow: 1;
+}
+        #parent #right {
+                flex-grow: 1;
+}
+/* Код внешки кнопок перехода */
+/* Здесь на самом деле всё чотко, но расписывать как и что работает я заебусь, так что вот так */
+a.bott{
+display: inline-block;
+font-size: 1.1em;
+width:90px;
+text-decoration:none;
+text-align:center;
+font: bold 14px arial;
+text-transform: uppercase;
+padding: 10px 15px;
+margin: 20px auto;
+color: #ccc;
+background-color: #555;
+background-image: linear-gradient(top, #888 0%, #555 100%);
+background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #888), color-stop(1, #555));
+background-image: -moz-linear-gradient(top, #888 0%, #555 100%);
+background-image: -o-linear-gradient(top, #888 0%, #555 100%);
+border: none;
+border-radius: 3px;
+text-shadow: 0px -1px 0px #000;
+box-shadow: 0px 1px 0px #666,0px 5px 0px #444,0px 6px 6px rgba(0, 0, 0, .6);
+-webkit-transition: ease .15s all;
+-moz-transition: ease .15s all;
+-o-transition: ease .15s all;
+transition: ease .15s all;
+-webkit-animation: none;
+ -moz-animation: none;
+ -o-animation: none;
+  animation: none;
+}
+a.bott:hover, a.bott:focus{
+-webkit-animation: linear 1.2s light infinite;
+-moz-animation: linear 1.2s light infinite;
+-o-animation: linear 1.2s light infinite;
+animation: linear 1.2s light infinite;
+}
+@-webkit-keyframes light{
+0%   { color: #ddd; text-shadow: 0px -1px 0px #000; }
+50%   { color: #fff; text-shadow: 0px -1px 0px #444, 0px 0px 5px #ffd, 0px 0px 8px #fff; }
+100% { color: #ddd; text-shadow: 0px -1px 0px #000; }
+}
+@-moz-keyframes light{
+0%   { color: #ddd; text-shadow: 0px -1px 0px #000; }
+50%   { color: #fff; text-shadow: 0px -1px 0px #444, 0px 0px 5px #ffd, 0px 0px 8px #fff; }
+100% { color: #ddd; text-shadow: 0px -1px 0px #000; }
+}
+@-o-keyframes light{
+0%   { color: #ddd; text-shadow: 0px -1px 0px #000; }
+50%   { color: #fff; text-shadow: 0px -1px 0px #444, 0px 0px 5px #ffd, 0px 0px 8px #fff; }
+100% { color: #ddd; text-shadow: 0px -1px 0px #000; }
+}
+@keyframes light{
+0%   { color: #ddd; text-shadow: 0px -1px 0px #000; }
+50%   { color: #fff; text-shadow: 0px -1px 0px #444, 0px 0px 5px #ffd, 0px 0px 8px #fff; }
+100% { color: #ddd; text-shadow: 0px -1px 0px #000; }
+}
+a.bott:active{
+color: #fff;
+text-shadow: 0px -1px 0px #444,0px 0px 5px #ffd,0px 0px 8px #fff;
+box-shadow: 0px 1px 0px #666,0px 2px 0px #444,0px 2px 2px rgba(0, 0, 0, .9);
+-webkit-transform: translateY(3px);
+-moz-transform: translateY(3px);
+-o-transform: translateY(3px);
+transform: translateY(3px);
+-webkit-animation: none;
+-moz-animation: none;
+-o-animation: none;
+animation: none;
+}
+/* Код внешки кнопок для копирования */
+/* Здесь на самом деле всё чотко, но расписывать как и что работает я заебусь, так что вот так */
+            #kildsan {
+	display: inline-block;
+	font-size: 14px;
+	font-weight: 400;
+	line-height: 2;
+    cursor:pointer;
+	border: 1px solid transparent;
+	border-radius: 10px
+        
+}
+            #kildsan {
+    width: 220px;
+    height: 50px;
+    border: none;
+    outline: none;
+    color: #fff;
+    background: #111;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 10px;
+}
+            #kildsan:before {
+    content: '';
+    background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+    position: absolute;
+    top: -2px;
+    left:-2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing 20s linear infinite;
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+    border-radius: 10px;
+}
+            #kildsan:active {
+    color: #fffb00
+}
+            #kildsan:active:after {
+    background: transparent;
+}
+            #kildsan:hover:before {
+    opacity: 1;
+}
+            #kildsan:after {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #111;
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+}
+            @keyframes glowing {
+    0% { background-position: 0 0; }
+    50% { background-position: 400% 0; }
+    100% { background-position: 0 0; }
+}
+            details[open] div {
+  animation: spoiler 1s;
+}
+            @keyframes spoiler {
+  0%   {opacity: 0;}
+  100% {opacity: 1;}
+}
+/* Код кнопок максима */
+/* Я так и не долез до того, чтобы разбираться в их дизайне */
+            .btn-group input:hover {
+    background-color: #ffd333;
+    background-image: linear-gradient(to top right, #C0C0C0, #ffd333);
+}
+            .btn input{
+    position:flex;
+    border: 2px solid black;
+    border-radius: 10px;
+    padding: 7px 24px;
+    background-color: #ffe500;
+    background-image: linear-gradient(to top right, #C0C0C0, #ff7518);
+    font-weight: 750;
+} 
+            .btn input:not(:last-child) {
+    border-bottom: none; /* Prevent double borders */
+}
+            .btn input:hover {
+    background-color: #ffd333;
+    background-image: linear-gradient(to top right, #C0C0C0, #ff2400);
+}
+/* Коды для спойлеров, окна текста, кнопок классических */
+/* Спойлеры уже были удалены, но можно их добавить тегом <details> */
+            details[open] div {
+  animation: spoiler 1s;
+}
+            @keyframes spoiler {
+  0%   {opacity: 0;}
+  100% {opacity: 1;}
+}
+            textarea {
+	outline: none;
+	-moz-appearance: none;
+	border: 2px solid #b1b1b1;
+    background: linear-gradient(150deg, #ffffff, #cccccc);
+    border-radius: 5px;
+    box-shadow: 0.4em 0.4em 5px rgba(122,122,122,0.75);
+}
+            #inputFileNameToSaveAs {
+outline: none;
+	-moz-appearance: none;
+	border: 2px solid #b1b1b1;
+    background: linear-gradient(150deg, #ffffff, #cccccc);
+    border-radius: 5px;
+    box-shadow: 0.4em 0.4em 5px rgba(122,122,122,0.75);
+}
+            button {
+    outline: none;
+	-moz-appearance: none;
+	border: 2px solid #b1b1b1;
+    background: linear-gradient(150deg, #ffffff, #cccccc);
+    border-radius: 5px;
+    box-shadow: 0.4em 0.4em 5px rgba(122,122,122,0.75);
+}
+            button:hover {
+    	color: #111;
+    	background: #ffffff;
+    	-webkit-transition: all .3s linear;
+    	-moz-transition: all .3s linear; 
+        box-shadow: 0.4em 0.4em 5px rgba(122,122,122,0.75);
+    }
+            input {
+outline: none;
+    background: linear-gradient(150deg, #ffffff, #cccccc);
+    border-radius: 5px;
+    box-shadow: 0.4em 0.4em 5px rgba(122, 122, 122, 0.75);
+}
+            input:hover {
+    	color: #111;
+    	background: #ffffff;
+    	-webkit-transition: all .3s linear;
+    	-moz-transition: all .3s linear; 
+        box-shadow: 0.4em 0.4em 5px rgba(122,122,122,0.75);
+    }
+            #snowflakeContainer {
+        position: absolute;
+        left: 0px;
+        top: 0px;
+        display: none;
+  }
+/* код стиля снежинок */
+            .snowflake {
+        position: fixed;
+        background-color: #CCC;
+        user-select: none;
+        z-index: 1000;
+        pointer-events: none;
+        border-radius: 50%;
+        width: 10px;
+        height: 10px;
+  }
+
+        </style>
+
+    </head>
+            <body>
+<!--Короче, начинаем коментить код, как все будет выглядеть - то что написано коментом - описывает то, что закодено ниже -->
+<!-- Блок с первой скрытой надписью -->
+<center>
+<div style="font-size: 0.1" >Привет, я очень рад что ты смог(ла) найти эту надпись. Меня зовут Алексей, я написал код этой страницы, я был оператором ТМ. Изначально это была страница всего с 5 кнопками которую я сделал для упрощения своей работы, но потом я поделился ей с другими коллегами, и потихоньку она улучшалась пока не превратилась в то, что ты видишь сейчас на экране. Желаю тебе шикарных показателей и отличного настроения!</div>
+</center>
+    <!-- это мы вставляем блок снежинок, в принципе, если хочешь убрать их из кода - просто удали <div> ниже -->
+
+    <div id="snowflakeContainer">
+        <span class="snowflake"></span>
+    </div>
+                <!-- Дальше скрыты кнопочки для перехода по сайтам, ты охуеешь, но они нихуя не кнопки на самом деле, а ссылки но со стилем -->
+                <center>
+<a href="https://www.youtube.com/watch?v=xvFZjo5PgG0" target="_blank" class="bott">Начало смены</a>&emsp;
+<a href="https://station14.ru/wiki/Корпоративный_Закон" target="_blank" class="bott">Корп. закон</a>&emsp;
+<a href="https://station14.ru/wiki/Напитки" target="_blank" class="bott">Напитки выпивка</a>&emsp;
+<a href="https://station14.ru/wiki/Готовка" target="_blank" class="bott">Готовка еды</a>&emsp;
+<a href="https://station14.ru/wiki/Бумажная_работа" target="_blank" class="bott">Шаблоны документов</a>&emsp;
+<a href="https://station14.ru/wiki/Таблица_навыков" target="_blank" class="bott">Таблица навыков</a>&emsp;
+<a href="https://station14.ru/wiki/Задачи_станции" target="_blank" class="bott">Задачи станции</a>&emsp;
+<a href="https://station14.ru/wiki/Руководство_по_ксеноархеологии" target="_blank" class="bott">Изучение артефактов</a>&emsp;
+<a href="https://station14.ru/wiki/Химия" target="_blank" class="bott">Вики Химия</a>&emsp;
+<a href="https://station14.ru/wiki/Медицина" target="_blank" class="bott">Вики Медицина</a>
+                </center>
+    <!-- Ебучая бегущая строка, "&emsp;" это здоровый такой пробел. Наставил их кучу чтобы были отступы между цитатами -->
+    <marquee style="font-size: 0.8em;position:fixed;left:0;bottom:2;margin-bottom:0">Семеро один не ждут © Dmitri Buhalov &emsp;&emsp;&emsp;&emsp; Живи и ошибайся © etituch &emsp;&emsp;&emsp;&emsp; Хорошо, всего доброго, до свидания © Екатерина Гусева &emsp;&emsp;&emsp;&emsp; Если хочешь кушать каждый день - выходи в ████! © Bururi &emsp;&emsp;&emsp;&emsp; Гармония — это всего лишь отсутствие переживаний из-за отсутствия ████████ © naiaforall &emsp;&emsp;&emsp;&emsp; Работа не волк, работа это work © regina_sl1 &emsp;&emsp;&emsp;&emsp; Сделал дело - дело сделано © trinz217 &emsp;&emsp;&emsp;&emsp; Семь раз отмерь один раз ███████ © Rzhavtsev_94</marquee>
+    <!-- Ну тут все ясно, версия, связь, кнопка смены темы, у них заданы фиксированные позиции -->
+    <p style="font-size: 0.6em;position:fixed;left:5;bottom:0;margin-bottom:5">Version 2.0</p>
+    <a style="font-size: 0.6em;position:fixed;left:5;bottom:0;margin-bottom:20" target="_blank" href="https://t.me/DefectiveTh">Связь</a>
+    <button style="position:fixed;right:5;bottom:0;margin-bottom:20" class="btn-toggle">Сменить тему</button>
+                <!-- Ахах, ебать, открываем parent, помнишь в стилях писал про отсеки -->
+                <div id="parent">
+
+                    <!-- ЛЕВЫЙ ОТСЕК СЛЕВА ПО БОРТУ НАХУЙ -->
+                    <!-- Ну а если серьезно, всё что будет прописано до закрытия <div id=left> будет слева на сайте -->
+                    <div id="left">
+                            <center>
+                                <p><b>Быстрое копирование фраз</b></p>
+<!-- Кнопочки ебать, крч, тут идет слой надписей которые будут скопированы -->
+<!-- Им задан фонт сайз 0, они как бы текст на сайте, но их нихуя нет -->
+<!-- На самом деле если умутриться их выделить, то их можно скопировать -->
+<div style="font-size: 0" id="t1">Приветствую вас, чего вам налить?</div>
+<div style="font-size: 0" id="t2">Какие люди в моем баре! Чего желаете?</div>
+<div style="font-size: 0" id="t3">Рад вас видеть! Хотите алкогольный напиток? Или может просто мороженное?</div>
+<div style="font-size: 0" id="t4">Сейчас всё будет в лучшем виде, только прошу вас, подождите немного.</div>
+<div style="font-size: 0" id="t5">Ох, а я вижу вы ценитель редких напитков, сейчас всё будет в лучшем виде.</div>
+<div style="font-size: 0" id="t6">Среди нас настоящий гурман! Боже, как давно я не получал подобного заказа! Сейчас же начну делать вам ваш напиток.</div>
+<div style="font-size: 0" id="t7">Попробуйте наш фирменный коктейль, не пожалеете!</div>
+<div style="font-size: 0" id="t8">Если любите ароматы цитруса, рекомендую наш особый лимонад.</div>
+<div style="font-size: 0" id="t9">Советую вам пшеничное пиво, оно лучшее в этом космическом секторе.</div>
+<div style="font-size: 0" id="t10">Какую крепость предпочитаете: легкую, среднюю или крепкую?</div>
+<div style="font-size: 0" id="t11">Хотите добавить лёд или может быть кусочек лимона?</div>
+<div style="font-size: 0" id="t12">Желаете сделать ваш напиток сладким, или оставим как есть?</div>
+<div style="font-size: 0" id="t13">Спасибо, что заглянули, будем рады видеть вас снова!</div>
+<div style="font-size: 0" id="t14">Надеюсь, вам понравилось. До новых встреч!</div>
+<div style="font-size: 0" id="t15">Всего доброго! Не забудьте нас посетить ещё.</div>
+<!-- Первый слой кнопок -->
+<!-- Идут по 3 штуки, потом стоят br чтобы сделать между ними отступ -->
+<button onclick="copytext('#t1')" id="kildsan">Приветствие 1</button>
+<button onclick="copytext('#t2')" id="kildsan">Приветствие 2</button>
+<button onclick="copytext('#t3')" id="kildsan">Приветствие 3</button>
+   <br><br>
+<button onclick="copytext('#t4')" id="kildsan">Сложный заказ 1</button>
+<button onclick="copytext('#t5')" id="kildsan">Сложный заказ 2</button>
+<button onclick="copytext('#t6')" id="kildsan">Сложный заказ 3</button>
+   <br><br>
+<button onclick="copytext('#t7')" id="kildsan">Предложение напитка 1</button>
+<button onclick="copytext('#t8')" id="kildsan">Предложение напитка 2</button>
+<button onclick="copytext('#t9')" id="kildsan">Предложение напитка 3</button>
+   <br><br>
+<button onclick="copytext('#t10')" id="kildsan">Уточнение 1</button>
+<button onclick="copytext('#t11')" id="kildsan">Уточнение 2</button>
+<button onclick="copytext('#t12')" id="kildsan">Уточнение 3</button>
+  <br><br>
+<button onclick="copytext('#t13')" id="kildsan">Прощание 1</button>
+<button onclick="copytext('#t14')" id="kildsan">Прощание 2</button>
+<button onclick="copytext('#t15')" id="kildsan">Прощание 3</button>
+
+<!-- Тут ниже стоит тройной br, чтобы разделить немного кнопки с текстом и кнопки с редкими фразами -->
+
+                                <br> <br> <br>
+
+<!-- Крч, опять та же шняга, текст который будет копироваться в нулевом размере -->
+<div style="font-size: 0" id="text13">Извините, но вам нужно покинуть барную стойку, это нарушение КЗ!</div>
+<div style="font-size: 0" id="text14">Пожалуйста, не мешайте моей работе, вы можете присесть и сделать заказ.</div>
+<div style="font-size: 0" id="text15">Мне жаль, но вам тут нельзя находиться, покиньте помещение.</div>
+<div style="font-size: 0" id="text16">Ох, какая досада, столько мусора тут. Нарушение санпина уже не за горой. Товарищ уборщик, уберетесь здесь?</div>
+<div style="font-size: 0" id="text17">Товарищи уборщики! Пришло ваше время! Ваша сила, ловкость и швабра нужны в баре прямо сейчас!</div>
+<div style="font-size: 0" id="text18">Буду благодарен, если уборщик сможет убрать все лужи в зоне бара.</div>
+<div style="font-size: 0" id="text19">Если не перестанете нарушать спокойствие, придется попросить вас уйти.</div>
+<div style="font-size: 0" id="text20">У нас здесь правила, и вам нужно их соблюдать. Без исключений.</div>
+<div style="font-size: 0" id="text24">Пожалуйста, давайте вести себя подобающе. Мы не хотели бы вас выгонять.</div>
+<!-- Та же шняга -->
+<button onclick="copytext('#text13')" id="kildsan">Залез на стол/за стол 1</button>
+<button onclick="copytext('#text14')" id="kildsan">Залез на стол/за стол 2</button>
+<button onclick="copytext('#text15')" id="kildsan">Залез на стол/за стол 3</button>
+   <br><br>
+<button onclick="copytext('#text16')" id="kildsan">Призыв уборщика 1</button>
+<button onclick="copytext('#text17')" id="kildsan">Призыв уборщика 2</button>
+<button onclick="copytext('#text18')" id="kildsan">Призыв уборщика 3</button>
+   <br><br>
+<button onclick="copytext('#text19')" id="kildsan">Попытка успокоить буйного 1</button>
+<button onclick="copytext('#text20')" id="kildsan">Попытка успокоить буйного 2</button>
+<button onclick="copytext('#text24')" id="kildsan">Попытка успокоить буйного 3</button>
+                            </center>
+                    <!-- Вот тут ниже див закрывается, это мы закрыли левую часть сайта -->
+                    </div>
+                    <!-- А вот тут мы открываем правую часть сайта -->
+                    <div id="right">
+                            <center>
+<!-- Скрытое послание номер 2 -->
+<div style="font-size: 0.1" >А вообще, было приятно быть частью команды ТМ, спасибо вам всем. В день когда я пишу эту часть кода, я буду с вами последний день.</div>
+
+<p><b>Счетчик налитого и разбитого</b></p>
+    <!-- Ну это Макс, твои кнопки, сам в них разбирайся -->
+    <div class="btn">
+     <input type="button" class="btn" value="Сделал 0 напитков (Жмякни для изменения)" onclick="var t = this.value.split (' '); ++t [1]; this.value = t.join (' ')"><br><br>
+    <div class="btn2">
+     <input type="button" class="btn" value="Разбили 0 бокалов (Жмякни для изменения)" onclick="var t = this.value.split (' '); ++t [1]; this.value = t.join (' ')">   
+   </div>
+         <p style="font-size: 0.75em;">Кнопочки взяты из кода Bururi5586</p>
+   </div>
+
+<p><b>Рецепты напитков</b></p>
+<div class="recipe-container">
+    <div style="margin-bottom: 20px;">
+        <input list="recipes" id="recipe-input">
+        <datalist id="recipes">
+            <option value="Амасек">
+            <option value="Андалусия">
+            <option value="Антифриз">
+            <option value="Атомная бомба">
+            <option value="Банана-хонк">
+            <option value="Белый Гильгамеш">
+            <option value="Белый русский">
+            <option value="Белый снег">
+            <option value="Бомба синдиката">
+            <option value="Виски кола">
+            <option value="Виски с содовой">
+            <option value="Водка мартини">
+            <option value="Водка тоник">
+            <option value="Гильдлагер">
+            <option value="Глушитель">
+            <option value="Горячее какао">
+            <option value="Горячий рамэн">
+            <option value="Грог">
+            <option value="Джин-тоник">
+            <option value="Домохозяйка">
+            <option value="Зелёный чай со льдом">
+            <option value="Ирландская автомобильная бомба">
+            <option value="Ирландские сливки">
+            <option value="Ирландский кофе">
+            <option value="Кира специальный">
+            <option value="Кислотный плевок">
+            <option value="Классический мартини">
+            <option value="Когчамп">
+            <option value="Козявка">
+            <option value="Коктейль Союзники">
+            <option value="Кофе латте">
+            <option value="Красная медовуха">
+            <option value="Кровавая Мэри">
+            <option value="Кровь демона">
+            <option value="Куба-либре">
+            <option value="Лёд">
+            <option value="Лимонад">
+            <option value="Лонг-айленд айс ти">
+            <option value="Манхэттен">
+            <option value="Манхэттенский проект">
+            <option value="Маргарита">
+            <option value="Мартинес">
+            <option value="Медовуха">
+            <option value="Мечты суи">
+            <option value="Мороженое">
+            <option value="Мохито">
+            <option value="Мужественный дворф">
+            <option value="Мыльная вода">
+            <option value="Особый токсин">
+            <option value="Отвёртка">
+            <option value="Пангалактический грызлодёр">
+            <option value="Пиво со льдом">
+            <option value="Пилк">
+            <option value="Покровитель">
+            <option value="Поска">
+            <option value="Поцелуй дьявола">
+            <option value="Радость доктора">
+            <option value="Радость хиппи">
+            <option value="Рутбир с мороженым">
+            <option value="Самогон">
+            <option value="Самый сухой мартини">
+            <option value="Сбитень">
+            <option value="Старкист">
+            <option value="Суррогат">
+            <option value="Сюрприз Эрики">
+            <option value="Текила санрайз">
+            <option value="Удар бипски">
+            <option value="Фоуртин локо">
+            <option value="Храбрый бык">
+            <option value="Чай со льдом три-майл-айленд">
+            <option value="Чай со льдом">
+            <option value="Чёрный русский">
+            <option value="Шипучий джин">
+            <option value="Этанол">
+            <option value="Ядерная кола">
+            <option value="B-52">
+
+            <!-- Добавьте другие варианты рецептов -->
+        </datalist>
+        <button onclick="clearInputAndDetails()">Х</button>
+    </div>
+
+    <div id="recipe-details">
+        <!-- Тут будут отображаться детали рецепта -->
+    </div>
+</div>
+</center>
+                    </div>
+
+<script>
+document.getElementById("recipe-input").addEventListener('input', showRecipeDetails);
+
+function showRecipeDetails() {
+    var input = document.getElementById("recipe-input").value;
+    
+    var recipes = {
+        "Лёд": "<h2>Лёд</h2><p><li>Вода (1)</li><li>Фризиум (1)</li></p>",
+        "Маргарита": "<h2>Маргарита</h2><p><li>Лаймовый сок (1)</li><li>Текила (2)</li></p>",
+        "Поска": "<h2>Поска</h2><p><li>Вода (1)</li><li>Уксус (1)</li><li>Столовая соль (1)</li></p>",
+        "Фоуртин локо": "<h2>Фоуртин локо</h2><p><li>Водка (1)</li><li>Кофе (1)</li><li>Лаймовый сок (1)</li></p>",
+        "Глушитель": "<h2>Глушитель</h2><p><li>Ничего (1)</li><li>Сахар (1)</li><li>Сливки (1)</li></p>",
+        "Банана-хонк": "<h2>Банана-хонк</h2><p><li>Сливки (1)</li><li>Сахар (1)</li><li>Банановый сок (1)</li></p>",
+        "Покровитель": "<h2>Покровитель</h2><p><li>Серебро [1]</li><li>Текила [10]</li></p>",
+        "Ядерная кола": "<h2>Ядерная кола</h2><p><li>Уран (1)</li><li>Кола (5)</li></p>",
+        "Коктейль Союзники": "<h2>Коктейль Союзники</h2><p><details><summary>Классический мартини (2)</summary><i><li>Джин (2)</li><li>Вермут (1)</li></i></details><li>Водка (1)</li></p>",
+        "Ирландский кофе": "<h2>Ирландский кофе</h2><p><details><summary>Ирландский сливки (2)</summary><i><li>Виски (2)</li><li>Сливки (1)</li></i></details><li>Кофе (2)</li></p>",
+        "Суррогат": "<h2>Суррогат</h2><p><li>Универсальный фермент (1)</li><li>Этанол (2)</li><li>Сварочное топливо (1)</li></p>",
+        "Грог": "<h2>Грог</h2><p><li>Вода (2)</li><li>Ром (1)</li><li>Сахар (1)</li></p>",
+        "Пиво со льдом": "<h2>Пиво со льдом</h2><p><li>Пиво (5)</li><li>Лёд (1)</li></p>",
+        "Самый сухой мартини": "<h2>Самый сухой мартини</h2><p><li>Джин (1)</li><li>Ничего (1)</li></p>",
+        "Кровавая Мэри": "<h2>Кровавая Мэри</h2><p><li>Водка (2)</li><li>Лаймовый сок (1)</li><li>Томатный сок (3)</li></p>",
+        "Атомная бомба": "<h2>Атомная бомба</h2><details><summary>В-52 (10)</summary><i><details><summary>Ирландская автомобильная бомба (1)</summary><details><summary>Ирландский сливки (1)</summary><li>Виски (2)</li><li>Сливки (1)</li></details><li>Эль (1)</li><li>Коньяк [1]</li></details><li>Кофейный ликёр [1]</li><li>Коньяк [1]</li></details></i><li>Уран (1)</li></p>",
+        "Ирландские сливки": "<h2>Ирландские сливки</h2><p><li>Виски (2) 1</li><li>Сливки (1)</li></p>",
+        "Поцелуй дьявола": "<h2>Поцелуй дьявола</h2><p><li>Ром (1)</li><li>Кофейный ликёр (1)</li><li>Кровь (1)</li></p>",
+        "Мартинес": "<h2>Мартинес</h2><p><li>Водка [2]</li><li>Лимонный сок [1]</li><li>Кола [2]</li><li>Лёд [1]</li></p>",
+        "Храбрый бык": "<h2>Храбрый бык</h2><p><li>Текила (2)</li><li>Кофейный ликёр (1)</li></p>",
+        "Мечты суи": "<h2>Мечты суи</h2><p><li>Голубой кюрасао (1)</li><li>Спейс-ап (1)</li><li>Дынный ликёр (1)</li></p>",
+        "Мороженое": "<h2>Мороженое</h2><p><li>Сливки (1)</li><li>Сахар (1)</li><li>Лёд (1)</li></p>",
+        "Кофе латте": "<h2>Кофе латте</h2><p><li>Кофе (1) 1</li><li>Молоко (1)</li></p>",
+        "Чай со льдом три-майл-айленд": "<h2>Три-майл-айленд</h2><p><details><summary>Лонг-айленд айс ти (10)</summary><details><summary>Куба-либре (3)</summary><li>Кола (2)</li><li>Ром (1)</li></details><li>Водка (1)</li><li>Джин (1)</li><li>Текила (1)</li></details></li><li>Уран (1)</li></p>",
+        "Самогон": "<h2>Самогон</h2><p><li>Водка (1)</li><li>Текила (1)</li><li>Виски (1)</li></p>",
+        "Мохито": "<h2>Мохито</h2><p><li>Газированная вода (1)</li><li>Ром (1)</li><li>Лаймовый сок (1)</li><li>Сахар (1)</li></p>",
+        "Ирландская автомобильная бомба": "<h2>ИАБ</h2><p><details><summary>Ирландский сливки (2)</summary><li>Виски (2)</li><li>Сливки (1)</li></details><li>Эль (1)</li></p>",
+        "Куба-либре": "<h2>Куба-либре</h2><p><li>Кола (2)</li><li>Ром (1)</li></p>",
+        "Особый токсин": "<h2>Особый токсин</h2><p><li>Плазма (2)</li><li>Ром (2)</li><li>Вермут (1)</li></p>",
+        "Чай со льдом": "<h2>Чай со льдом</h2><p><li>Чай (2)</li><li>Лёд (1)</li></p>",
+        "Красная медовуха": "<h2>Красная медовуха</h2><p><li>Медовуха (1)</li><li>Кровь (1)</li></p>",
+        "Классический мартини": "<h2>Классический мартини</h2><p><li>Джин (2)</li><li>Вермут (1)</li></p>",
+        "Манхэттенский проект": "<h2>Манхэттенский проект</h2><p><li>Уран (1)</li><li>Виски (10)</li></p>",
+        "Пангалактический грызлодёр": "<h2>Пангалактический грызлодёр</h2><p><li>Водка (1)</li><li>Коньяк (1)</li><li>Джин (1)</li><li>Виски (1)</li><li>Лаймовый сок (1)</li></p>",
+        "Белый Гильгамеш": "<h2>Белый Гильгамеш</h2><p><li>Пиво (2)</li><li>Молоко (1)</li></p>",
+        "Козявка": "<h2>Козявка</h2><p><li>Ром (1)</li><li>Сливки (2)</li><li>Банановый сок (1)</li><li>Арбузный сок (1)</li></p>",
+        "Шипучий джин": "<h2>Шипучий джин</h2><p><li>Газированная вода (1)</li><li>Лаймовый сок (1)</li><li>Джин (1)</li></p>",
+        "Кровь демона": "<h2>Кровь демона</h2><p><li>Космический маунтин винд (1)</li><li>Доктор Гибб (1)</li><li>Кровь (1)</li><li>Ром (1)</li></p>",
+        "Горячее какао": "<h2>Горячее какао</h2><p><li>Какао-порошок (1)</li><li>Вода (1)</li></p>",
+        "B-52": "<h2>B-52</h2><p><details><summary>Ирландская автомобильная бомба (1)</summary><details><summary>Ирландский сливки (2)</summary><li>Виски (2)</li><li>Сливки (1)</li></details><li>Эль (1)</li></details><li>Коньяк (1)</li></details><li>Коньяк (1)</li><li>Кофейный ликёр (1)</li></p>",
+        "Лонг-айленд айс ти": "<h2>Лонг-айленд айс ти</h2><p><details><summary>Куба-либре (3)</summary><li>Кола (2)</li><li>Ром (1)</li></details><li>Водка (1)</li><li>Джин (1)</li><li>Текила (1)</li></p>",
+        "Виски с содовой": "<h2>Виски с содовой</h2><p><li>Газированная вода (2)</li><li>Виски (1)</li></p>",
+        "Текила санрайз": "<h2>Текила санрайз</h2><p><li>Апельсиновый сок (1)</li><li>Текила (2)</li></p>",
+        "Антифриз": "<h2>Антифриз</h2><p><li>Водка (2)</li><li>Сливки (1)</li><li>Лёд (1)</li></p>",
+        "Зелёный чай со льдом": "<h2>Зелёный чай со льдом</h2><p><li>Лёд (1)</li><li>Зелёный чай (2)</li></p>",
+        "Кира специальный": "<h2>Кира специальный</h2><p><li>Газированная вода (1)</li><li>Лаймовый сок (1)</li><li>Апельсиновый сок (1)</li></p>",
+        "Мыльная вода": "<h2>Мыльная вода</h2><p><li>Вода (3)</li><li>Мыло (1)</li></p>",
+        "Удар бипски": "<h2>Удар бипски</h2><p><li>Виски (1)</li><li>Лаймовый сок (1)</li><li>Железо (1)</li></p>",
+        "Когчамп": "<h2>Когчамп</h2><p><details><summary>Отвёртка (1)</summary><li>Апельсиновый сок (2)</li><li>Водка (1)</li></details><li>Коньяк (1)</li><li>Сварочное топливо (1)</li></p>",
+        "Старкист": "<h2>Старкист</h2><p><li>Кола (1)</li><li>Апельсиновый сок (2)</li></p>",
+        "Гильдлагер": "<h2>Гильдлагер</h2><p><li>Водка (10)</li><li>Золото (1)</li></p>",
+        "Сюрприз Эрики": "<h2>Сюрприз Эрики</h2><p><li>Виски (1)</li><li>Банановый сок (1)</li><li>Эль (2)</li><li>Лаймовый сок (1)</li><li>Лёд (1)</li></p>",
+        "Рутбир с мороженым": "<h2>Рутбир с мороженым</h2><p><li>Рутбир (2)</li><li>Мороженое (1)</li></p>",
+        "Водка тоник": "<h2>Водка тоник</h2><p><li>Водка (1)</li><li>Тоник (2)</li></p>",
+        "Отвёртка": "<h2>Отвёртка</h2><p><li>Апельсиновый сок (2)</li><li>Водка (1)</li></p>",
+        "Бомба синдиката": "<h2>Бомба синдиката</h2><p><li>Пиво (1)</li><details><summary>Виски кола (1)</summary><li>Виски (1)</li><li>Кола (2)</li></details></p>",
+        "Медовуха": "<h2>Медовуха</h2><p><li>Универсальный фермент (1)</li><li>Сахар (1)</li></p>",
+        "Мужественный дворф": "<h2>Мужественный дворф</h2><p><li>Эль (2)</li><li>Пиво (1)</li></p>",
+        "Радость хиппи": "<h2>Радость хиппи</h2><p><details><summary>Пангалактический грызлодёр (1)</summary><li>Водка (1)</li><li>Коньяк (1)</li><li>Джин (1)</li><li>Виски (1)</li><li>Лаймовый сок (1)</li></details><li>ТГК (1)</li></p>",
+        "Домохозяйка": "<h2>Домохозяйка</h2><p><li>Ягодныфй сок (1)</li><li>Вермут (1)</li><li>Сливки (1)</li></p>",
+        "Манхэттен": "<h2>Манхэттен</h2><p><li>Вермут (1)</li><li>Виски (2)</li></p>",
+        "Водка мартини": "<h2>Водка мартини</h2><p><li>Водка (2)</li><li>Вермут (1)</li></p>",
+        "Джин-тоник": "<h2>Джин-тоник</h2><p><li>Тоник (2)</li><li>Джин (1)</li></p>",
+        "Пилк": "<h2>Пилк</h2><p><li>Молоко (1)</li><li>Кола (1)</li></p>",
+        "Сбитень": "<h2>Сбитень</h2><p><li>Капсаициновое масло (1)</li><li>Водка (1)</li></p>",
+        "Амасек": "<h2>Амасек</h2><p><li>Вино (2)</li><li>Водка (2)</li><li>Железо (1)</li></p>",
+        "Радость доктора": "<h2>Радость доктора</h2><p><li>Трикордразин (1)</li><li>Лаймовый сок (1)</li><li>Томатный сок (1)</li><li>Сливки (2)</li><li>Апельсиновый сок (1)</li></p>",
+        "Этанол": "<h2>Этанол</h2><p><li>Сварочное топливо (10)</li></p>",
+        "Андалусия": "<h2>Андалусия</h2><p><li>Ром (1)</li><li>Виски (1)</li><li>Лимонный сок (1)</li></p>",
+        "Белый русский": "<h2>Белый русский</h2><p><details><summary>Чёрный русский (2)</summary><li>Водка (2)</li><li>Кофейный ликёр (1)</li></details><li>Сливки (1)</li></p>",
+        "Чёрный русский": "<h2>Чёрный русский</h2><p><li>Водка (2)</li><li>Кофейный ликёр (1)</li></p>",
+        "Виски кола": "<h2>Виски кола</h2><p><li>Виски (1)</li><li>Кола (2)</li></p>",
+        "Белый снег": "<h2>Белый снег</h2><p><li>Пиво (1)</li><li>Лимон-лайм (1)</li></p>",
+        "Кислотный плевок": "<h2>Кислотный плевок</h2><p><li>Вино (2)</li><li>Серная кислота (1)</li><</p>",
+        // Добавьте другие рецепты по аналогии
+    };
+    
+    document.getElementById("recipe-details").innerHTML = recipes[input] || "Рецепт не найден.";
+}
+
+function clearInputAndDetails() {
+    document.getElementById("recipe-input").value = ''; // Очищаем текстовое поле
+    document.getElementById("recipe-details").innerHTML = ''; // Очищаем детали рецепта
+}
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> <!-- библиотека jquery -->
+<script id="rendered-js">
+function copytext(el) {
+  var $tmp = $("<input>");
+  $("body").append($tmp);
+  $tmp.val($(el).text()).select();
+  document.execCommand("copy");
+  $tmp.remove();
+}
+//# sourceURL=pen.js
+    </script> <!-- скрипт копирования текста -->
+<script>
+  var snowflakes = [];
+  var browserWidth;
+  var browserHeight;
+  var numberOfSnowflakes = 50;
+  var resetPosition = false;
+  var enableAnimations = false;
+  var reduceMotionQuery = matchMedia("(prefers-reduced-motion)");
+  function setAccessibilityState() {
+    if (reduceMotionQuery.matches) {
+      enableAnimations = false;
+    } else { 
+      enableAnimations = true;
+    }
+  }
+  setAccessibilityState();
+
+  reduceMotionQuery.addListener(setAccessibilityState);
+
+
+  function setup() {
+    if (enableAnimations) {
+      window.addEventListener("DOMContentLoaded", generateSnowflakes, false);
+      window.addEventListener("resize", setResetFlag, false);
+    }
+  }
+  setup();
+
+  function Snowflake(element, speed, xPos, yPos) {
+    // устанавливаем начальные свойства снежинки
+    this.element = element;
+    this.speed = speed;
+    this.xPos = xPos;
+    this.yPos = yPos;
+    this.scale = 1;
+
+    this.counter = 0;
+    this.sign = Math.random() < 0.5 ? 1 : -1;
+
+    this.element.style.opacity = (.1 + Math.random()) / 3;
+  }
+
+  Snowflake.prototype.update = function () {
+
+    this.counter += this.speed / 5000;
+    this.xPos += this.sign * this.speed * Math.cos(this.counter) / 40;
+    this.yPos += Math.sin(this.counter) / 40 + this.speed / 30;
+    this.scale = .5 + Math.abs(10 * Math.cos(this.counter) / 20);
+
+    setTransform(Math.round(this.xPos), Math.round(this.yPos), this.scale, this.element);
+
+    if (this.yPos > browserHeight) {
+      this.yPos = -50;
+    }
+  }
+
+
+  function setTransform(xPos, yPos, scale, el) {
+    el.style.transform = `translate3d(${xPos}px, ${yPos}px, 0) scale(${scale}, ${scale})`;
+  }
+
+
+  function generateSnowflakes() {
+
+
+    var originalSnowflake = document.querySelector(".snowflake");
+
+
+    var snowflakeContainer = originalSnowflake.parentNode;
+    snowflakeContainer.style.display = "block";
+
+    browserWidth = document.documentElement.clientWidth;
+    browserHeight = document.documentElement.clientHeight;
+
+    for (var i = 0; i < numberOfSnowflakes; i++) {
+
+      var snowflakeClone = originalSnowflake.cloneNode(true);
+      snowflakeContainer.appendChild(snowflakeClone);
+
+      var initialXPos = getPosition(50, browserWidth);
+      var initialYPos = getPosition(50, browserHeight);
+      var speed = 5 + Math.random() * 40;
+
+      var snowflakeObject = new Snowflake(snowflakeClone,
+        speed,
+        initialXPos,
+        initialYPos);
+      snowflakes.push(snowflakeObject);
+    }
+
+    snowflakeContainer.removeChild(originalSnowflake);
+
+    moveSnowflakes();
+  }
+
+  function moveSnowflakes() {
+
+    if (enableAnimations) {
+      for (var i = 0; i < snowflakes.length; i++) {
+        var snowflake = snowflakes[i];
+        snowflake.update();
+      }      
+    }
+
+    if (resetPosition) {
+      browserWidth = document.documentElement.clientWidth;
+      browserHeight = document.documentElement.clientHeight;
+
+      for (var i = 0; i < snowflakes.length; i++) {
+        var snowflake = snowflakes[i];
+
+        snowflake.xPos = getPosition(50, browserWidth);
+        snowflake.yPos = getPosition(50, browserHeight);
+      }
+
+      resetPosition = false;
+    }
+
+    requestAnimationFrame(moveSnowflakes);
+  }
+
+  //
+  
+  function getPosition(offset, size) {
+    return Math.round(-1 * offset + Math.random() * (size + 2 * offset));
+  }
+
+  function setResetFlag(e) {
+    resetPosition = true;
+  }
+</script> <!-- скрипт снежинок -->
+<script type="text/javascript">
+const btn = document.querySelector(".btn-toggle");
+
+
+btn.addEventListener("click", function () {
+
+  document.body.classList.toggle("dark-theme");
+}
+);
+</script> <!-- скрипт смены темы -->
+            </body>
+</html>
